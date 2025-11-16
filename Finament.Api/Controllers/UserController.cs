@@ -7,11 +7,11 @@ namespace Finament.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UsersController : ControllerBase
+public class UserController : ControllerBase
 {
     private readonly FinamentDbContext _db;
 
-    public UsersController(FinamentDbContext db)
+    public UserController(FinamentDbContext db)
     {
         _db = db;
     }
