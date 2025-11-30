@@ -4,6 +4,12 @@
       <ProjectReference Include="..\Finament.Domain\Finament.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="DTOs\Categories\Requests\" />
+      <Folder Include="DTOs\Expenses\Requests\" />
+      <Folder Include="DTOs\Settings\Requests\" />
+    </ItemGroup>
+
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>

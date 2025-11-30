@@ -1,4 +1,6 @@
 using Finament.Api.Persistence;
+using Finament.Application.DTOs.Users.Requests;
+using Finament.Application.Mapping;
 using Finament.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +23,8 @@ public class UserController : ControllerBase
     public async Task<IActionResult> GetAll()
     {
         var users = await _db.Users.ToListAsync();
-        return Ok(users);
+        var dto = users.Select(UserMapping.ToDto).ToList();
+        return Ok(dto);
     }
 
     // GET: api/users/{id}
@@ -32,15 +35,17 @@ public class UserController : ControllerBase
 
         if (user == null)
             return NotFound();
+        
+        var dto = UserMapping.ToDto(user);
 
-        return Ok(user);
+        return Ok(dto);
     }
     
     // POST: api/users
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(CreateUserDto dto)
     {
-        user.CreatedAt = DateTime.UtcNow;
+        var user = UserMapping.ToEntity(dto, null);
 
         _db.Users.Add(user);
         await _db.SaveChangesAsync();
@@ -50,15 +55,24 @@ public class UserController : ControllerBase
 
     // PUT: api/users/{id}
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, User updatedUser)
+    public async Task<IActionResult> Update(int id, UpdateUserDto dto)
     {
         var user = await _db.Users.FindAsync(id);
 
         if (user == null)
             return NotFound();
 
-        user.Name = updatedUser.Name;
-        user.Email = updatedUser.Email;
+        // is email duplicated
+        if (dto.Email != null)
+        {
+            var duplicate = await _db.Users
+                .AnyAsync(u => u.Email == dto.Email && u.Id != id);
+
+            if (duplicate)
+                return Conflict(new { message = "Email already exists." });
+        }
+        
+        UserMapping.UpdateEntity(user, dto);
 
         _db.Users.Update(user);
         await _db.SaveChangesAsync();

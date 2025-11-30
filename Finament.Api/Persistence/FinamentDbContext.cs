@@ -12,6 +12,8 @@ public class FinamentDbContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Expense> Expenses { get; set; }
     
+    public DbSet<Setting> Settings { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>(entity =>
@@ -42,6 +44,14 @@ public class FinamentDbContext : DbContext
             entity.Property(e => e.Date).HasColumnName("date");
             entity.Property(e => e.Tag).HasColumnName("tag");
             entity.Property(e => e.CreatedAt).HasColumnName("created_at");
+        });
+        
+        modelBuilder.Entity<Setting>(entity =>
+        {
+            entity.Property(e => e.Id).HasColumnName("id").ValueGeneratedOnAdd();
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.Currency).HasColumnName("currency");
+            entity.Property(e => e.CycleStartDay).HasColumnName("cycle_start_day");
         });
         
         base.OnModelCreating(modelBuilder);

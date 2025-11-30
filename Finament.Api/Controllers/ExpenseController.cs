@@ -55,6 +55,20 @@ public class ExpenseController : ControllerBase
 
         return Ok(expense);
     }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var expense = await _db.Expenses.FindAsync(id);
+
+        if (expense == null)
+            return NotFound(new { message = "Expense not found." });
+        
+        _db.Expenses.Remove(expense);
+        await _db.SaveChangesAsync();
+        
+        return NoContent();
+    }
 
     
     private string? ToCamelCase(string? tag)
