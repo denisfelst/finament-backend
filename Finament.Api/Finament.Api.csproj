@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
     <ItemGroup>
       <ProjectReference Include="..\Finament.Application\Finament.Application.csproj" />
       <ProjectReference Include="..\Finament.Infrastructure\Finament.Infrastructure.csproj" />
@@ -17,6 +16,15 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10" />
+        <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="10.0.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.0.1" />
     </ItemGroup>
 
     <PropertyGroup>
@@ -24,4 +32,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+    
+    
 </Project>
