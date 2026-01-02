@@ -35,14 +35,11 @@ public static class ExpenseMapping
 
     public static void UpdateEntity(Expense expense, UpdateExpenseDto dto)
     {
-        if (dto.CategoryId.HasValue)
-            expense.CategoryId = dto.CategoryId.Value;
+        expense.CategoryId = dto.CategoryId;
 
-        if (dto.Amount.HasValue)
-            expense.Amount = dto.Amount.Value;
+        expense.Amount = dto.Amount;
 
-        if (dto.Date.HasValue)
-            expense.Date = dto.Date.Value;
+        expense.Date = dto.Date;
 
         if (dto.Tag != null)
             expense.Tag = dto.Tag;

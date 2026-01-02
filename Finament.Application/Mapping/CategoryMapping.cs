@@ -33,13 +33,11 @@ public static class CategoryMapping
 
     public static void UpdateEntity(Category category, UpdateCategoryDto dto)
     {
-        if (dto.Name != null)
-            category.Name = dto.Name;
 
-        if (dto.MonthlyLimit.HasValue)
-            category.MonthlyLimit = dto.MonthlyLimit.Value;
+        category.Name = dto.Name;
 
-        if (dto.Color != null)
-            category.Color = dto.Color;
+        category.MonthlyLimit = dto.MonthlyLimit;
+
+        category.Color = dto.Color;
     }
 }

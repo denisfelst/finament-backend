@@ -1,9 +1,9 @@
 namespace Finament.Application.DTOs.Categories.Requests;
 
-public class CreateCategoryDto
+public class CreateCategoryDto: ICategoryWriteBaseDto
 {
-    public int UserId { get; set; }
-    public string Name { get; set; } = "";
-    public decimal MonthlyLimit { get; set; }
-    public string Color { get; set; } = "";
+    public required int UserId { get; set; }
+    public required string Name { get; set; }
+    public required decimal MonthlyLimit { get; set; }
+    public required string Color { get; set; }
 }

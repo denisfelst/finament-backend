@@ -1,7 +1,7 @@
+using System.Text.RegularExpressions;
 using Finament.Api.Persistence;
 using Finament.Application.DTOs.Categories.Requests;
 using Finament.Application.Mapping;
-using Finament.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,17 +33,21 @@ public class CategoryController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(CreateCategoryDto dto)
     {
-        if (string.IsNullOrWhiteSpace(dto.Name))
-            return BadRequest(new { message = "Name is required." });
-        
+        var validation = ValidateAndNormalizeCategory(dto);
+        if (validation != null)
+            return validation;
+
         var duplicate = await _db.Categories
             .AnyAsync(c => c.UserId == dto.UserId && c.Name == dto.Name);
-        
-        if (duplicate)
-            return Conflict(new { message = "Category name already exists for this user." });
 
-        var category = CategoryMapping.ToEntity(dto); 
-        
+        if (duplicate)
+            return Conflict(new
+            {
+                message = "Category name already exists for this user."
+            });
+
+        var category = CategoryMapping.ToEntity(dto);
+
         _db.Categories.Add(category);
         await _db.SaveChangesAsync();
 
@@ -56,15 +60,23 @@ public class CategoryController : ControllerBase
         var category = await _db.Categories.FindAsync(id);
         if (category == null)
             return NotFound(new { message = "Category not found." });
-        
-        if (dto.Name != null)
-        {
-            var duplicate = await _db.Categories
-                .AnyAsync(c => c.UserId == category.UserId && c.Name == dto.Name && c.Id != id);
 
-            if (duplicate)
-                return Conflict(new { message = "Category name already exists for this user." });
-        }
+        var validation = ValidateAndNormalizeCategory(dto);
+        if (validation != null)
+            return validation;
+
+        var duplicate = await _db.Categories
+            .AnyAsync(c =>
+                c.UserId == category.UserId &&
+                c.Name == dto.Name &&
+                c.Id != id
+            );
+
+        if (duplicate)
+            return Conflict(new
+            {
+                message = "Category name already exists for this user."
+            });
 
         CategoryMapping.UpdateEntity(category, dto);
 
@@ -85,5 +97,47 @@ public class CategoryController : ControllerBase
         await _db.SaveChangesAsync();
         
         return NoContent();
+    }
+    
+    private static readonly Regex HexColorRegex =
+        new(@"^#[0-9A-Fa-f]{6}$", RegexOptions.Compiled);
+
+    private IActionResult? ValidateAndNormalizeCategory(ICategoryWriteBaseDto dto)
+    {
+        // === NAME ===
+        if (string.IsNullOrWhiteSpace(dto.Name) || dto.Name.Trim().Length < 3)
+        {
+            return BadRequest(new
+            {
+                message = "Category name must contain at least 3 characters."
+            });
+        }
+
+        dto.Name = dto.Name.Trim();
+
+        // === MONTHLY ESTIMATE ===
+        var roundedEstimate = (int)Math.Round(
+            dto.MonthlyLimit,
+            0,
+            MidpointRounding.AwayFromZero
+        );
+
+        if (roundedEstimate < 1)
+        {
+            return BadRequest(new
+            {
+                message = "Monthly estimate must be at least 1."
+            });
+        }
+
+        dto.MonthlyLimit = roundedEstimate;
+
+        // === COLOR ===
+        if (string.IsNullOrWhiteSpace(dto.Color) || !HexColorRegex.IsMatch(dto.Color))
+        {
+            dto.Color = "#FFFFFF";
+        }
+
+        return null;
     }
 }
