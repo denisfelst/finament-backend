@@ -1,4 +1,6 @@
-﻿using Finament.Api.Persistence;
+﻿using Finament.Api.Middleware;
+using Finament.Application.Infrastructure;
+using Finament.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 
@@ -36,6 +38,9 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddScoped<IFinamentDbContext, FinamentDbContext>();
+
+// === BUILD ===
 var app = builder.Build();
 
 app.UseCors(frontendcors);
@@ -53,6 +58,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();

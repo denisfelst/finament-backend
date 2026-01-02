@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
-using Finament.Api.Persistence;
 using Finament.Application.DTOs.Categories.Requests;
 using Finament.Application.Mapping;
+using Finament.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Finament.Api.Migrations
+namespace Finament.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class AddUserTable : Migration

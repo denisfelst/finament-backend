@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Finament.Api.Migrations
+namespace Finament.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

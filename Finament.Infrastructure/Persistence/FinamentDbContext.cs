@@ -1,17 +1,17 @@
+using Finament.Application.Infrastructure;
 using Finament.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Finament.Api.Persistence;
+namespace Finament.Infrastructure.Persistence;
 
 
-public class FinamentDbContext : DbContext
+public class FinamentDbContext : DbContext, IFinamentDbContext
 {
     public FinamentDbContext(DbContextOptions<FinamentDbContext> options) : base(options) { }
     
     public DbSet<User> Users { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Expense> Expenses { get; set; }
-    
     public DbSet<Setting> Settings { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
