@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Finament.Infrastructure.Persistence;
 
-
 public class FinamentDbContext : DbContext, IFinamentDbContext
 {
     public FinamentDbContext(DbContextOptions<FinamentDbContext> options) : base(options) { }

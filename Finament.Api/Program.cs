@@ -2,6 +2,7 @@
 using Finament.Application.Infrastructure;
 using Finament.Application.Services.Category;
 using Finament.Application.Services.Expense;
+using Finament.Application.Services.Settings;
 using Finament.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
@@ -44,6 +45,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<IFinamentDbContext, FinamentDbContext>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IExpenseService, ExpenseService>();
+builder.Services.AddScoped<ISettingService, SettingService>();
 
 // === BUILD ===
 var app = builder.Build();
