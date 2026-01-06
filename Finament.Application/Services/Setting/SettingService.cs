@@ -4,7 +4,6 @@ using Finament.Application.DTOs.Settings.Requests;
 using Finament.Application.DTOs.Settings;
 using Finament.Application.Exceptions;
 using Finament.Application.Mapping;
-using ValidationException = System.ComponentModel.DataAnnotations.ValidationException;
 
 namespace Finament.Application.Services.Setting;
 

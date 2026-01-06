@@ -1,6 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using Finament.Application.DTOs.Auth;
 using Finament.Application.DTOs.Auth.Requests;
+using Finament.Application.Exceptions;
 using Finament.Application.Infrastructure;
 using Finament.Application.Security;
 using Microsoft.EntityFrameworkCore;
@@ -27,10 +27,8 @@ public sealed class AuthService : IAuthService
         }
 
         var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
-        if (user == null)
-            throw new ValidationException("Invalid credentials.");
-
-        if (!PasswordHasher.Verify(dto.Password, user.PasswordHash))
+        
+        if (user == null || !PasswordHasher.Verify(dto.Password, user.PasswordHash))
             throw new ValidationException("Invalid credentials.");
 
         var token = _tokenService.CreateToken(user.Id);
