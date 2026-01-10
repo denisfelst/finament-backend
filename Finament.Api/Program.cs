@@ -39,15 +39,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: frontendcors,
         policy =>
         {
-            policy.WithOrigins(
-                    "http://localhost:4200",
-                    "https://localhost:4200"
-                )
+            policy.AllowAnyOrigin()
                 .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
+                .AllowAnyMethod();
         });
 });
+
+
 
 // Application services
 builder.Services.AddScoped<IFinamentDbContext, FinamentDbContext>();
@@ -107,5 +105,22 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<FinamentDbContext>();
+    try
+    {
+        db.Database.OpenConnection();
+        Console.WriteLine("✅ Conectado correctamente a Supabase");
+        db.Database.CloseConnection();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("❌ Error de conexión a la DB");
+        Console.WriteLine(ex.Message);
+    }
+}
+
 
 app.Run();
