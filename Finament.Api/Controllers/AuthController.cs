@@ -14,6 +14,12 @@ public class AuthController : ControllerBase
     {
         _service = service;
     }
+    
+    [HttpGet("health")]
+    public async Task<IActionResult> Health()
+    {
+        return Ok(new { status = "healthy" });
+    }
 
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequestDto dto)

@@ -17,6 +17,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.1" />
 
         <!-- PostgreSQL Provider (compatible con EF Core 8) -->
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
