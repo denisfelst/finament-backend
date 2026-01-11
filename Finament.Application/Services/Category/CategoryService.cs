@@ -82,14 +82,11 @@ public sealed class CategoryService : ICategoryService
         if (category == null)
             throw new NotFoundException("Category not found.");
 
-        var hasExpenses = await _db.Expenses
-            .AnyAsync(e => e.CategoryId == id);
+        var expenses = await _db.Expenses
+            .Where(e => e.CategoryId == id)
+            .ToListAsync();
 
-        if (hasExpenses)
-            throw new BusinessRuleException(
-                "Cannot delete category with existing expenses."
-            );
-
+        _db.Expenses.RemoveRange(expenses);
         _db.Categories.Remove(category);
         await _db.SaveChangesAsync();
     }
