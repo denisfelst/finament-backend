@@ -88,17 +88,28 @@ public sealed class CategoryService : ICategoryService
     
     public async Task DeleteAsync(int id)
     {
-        var category = await _db.Categories.FindAsync(id);
+        var category = await _db.Categories.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
         if (category == null)
             throw new NotFoundException("Category not found.");
 
+        // Delete expenses first with separate save
         var expenses = await _db.Expenses
             .Where(e => e.CategoryId == id)
             .ToListAsync();
 
-        _db.Expenses.RemoveRange(expenses);
-        _db.Categories.Remove(category);
-        await _db.SaveChangesAsync();
+        if (expenses.Count > 0)
+        {
+            _db.Expenses.RemoveRange(expenses);
+            await _db.SaveChangesAsync();
+        }
+
+        // Re-fetch and delete category
+        var categoryToDelete = await _db.Categories.FindAsync(id);
+        if (categoryToDelete != null)
+        {
+            _db.Categories.Remove(categoryToDelete);
+            await _db.SaveChangesAsync();
+        }
     }
     
     private void NormalizeAndValidate(ICategoryWriteBaseDto dto)
