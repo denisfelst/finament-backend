@@ -8,4 +8,5 @@ public class CategoryResponseDto
     public decimal MonthlyLimit { get; set; }
     public string Color { get; set; } = "";
     public DateTime CreatedAt { get; set; }
+    public int ExpenseCount { get; set; }
 }

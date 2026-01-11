@@ -28,7 +28,17 @@ public sealed class CategoryService : ICategoryService
             .OrderBy(c => c.Name)
             .ToListAsync();
 
-        return categories.Select(CategoryMapping.ToDto).ToList();
+        var categoryIds = categories.Select(c => c.Id).ToList();
+
+        var expenseCounts = await _db.Expenses
+            .Where(e => categoryIds.Contains(e.CategoryId))
+            .GroupBy(e => e.CategoryId)
+            .Select(g => new { CategoryId = g.Key, Count = g.Count() })
+            .ToDictionaryAsync(x => x.CategoryId, x => x.Count);
+
+        return categories
+            .Select(c => CategoryMapping.ToDto(c, expenseCounts.GetValueOrDefault(c.Id, 0)))
+            .ToList();
     }
     
     public async Task<CategoryResponseDto> CreateAsync(int userId, CreateCategoryDto dto)

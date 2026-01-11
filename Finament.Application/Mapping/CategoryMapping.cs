@@ -6,7 +6,7 @@ namespace Finament.Application.Mapping;
 
 public static class CategoryMapping
 {
-    public static CategoryResponseDto ToDto(Category category)
+    public static CategoryResponseDto ToDto(Category category, int expenseCount = 0)
     {
         return new CategoryResponseDto
         {
@@ -15,7 +15,8 @@ public static class CategoryMapping
             Name = category.Name,
             MonthlyLimit = category.MonthlyLimit,
             Color = category.Color,
-            CreatedAt = category.CreatedAt
+            CreatedAt = category.CreatedAt,
+            ExpenseCount = expenseCount
         };
     }
 
