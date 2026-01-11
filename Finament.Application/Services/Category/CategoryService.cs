@@ -30,14 +30,18 @@ public sealed class CategoryService : ICategoryService
 
         var categoryIds = categories.Select(c => c.Id).ToList();
 
-        var expenseCounts = await _db.Expenses
+        var expenseStats = await _db.Expenses
             .Where(e => categoryIds.Contains(e.CategoryId))
             .GroupBy(e => e.CategoryId)
-            .Select(g => new { CategoryId = g.Key, Count = g.Count() })
-            .ToDictionaryAsync(x => x.CategoryId, x => x.Count);
+            .Select(g => new { CategoryId = g.Key, Count = g.Count(), TotalSpent = (int)g.Sum(e => e.Amount) })
+            .ToDictionaryAsync(x => x.CategoryId, x => new { x.Count, x.TotalSpent });
 
         return categories
-            .Select(c => CategoryMapping.ToDto(c, expenseCounts.GetValueOrDefault(c.Id, 0)))
+            .Select(c =>
+            {
+                var stats = expenseStats.GetValueOrDefault(c.Id);
+                return CategoryMapping.ToDto(c, stats?.Count ?? 0, stats?.TotalSpent ?? 0);
+            })
             .ToList();
     }
     

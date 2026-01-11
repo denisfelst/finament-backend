@@ -9,4 +9,5 @@ public class CategoryResponseDto
     public string Color { get; set; } = "";
     public DateTime CreatedAt { get; set; }
     public int ExpenseCount { get; set; }
+    public int TotalSpent { get; set; }
 }
