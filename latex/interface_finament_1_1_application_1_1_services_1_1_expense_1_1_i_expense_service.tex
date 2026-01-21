@@ -1,0 +1,81 @@
+\doxysection{Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service Interface Reference}
+\hypertarget{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service}{}\label{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service}\index{Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}}
+
+
+Inheritance diagram for Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ IRead\+Only\+List$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_expense_response_dto}{Expense\+Response\+Dto}} $>$ $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a93c8bd91604e26497f862836a921dbad}{Get\+By\+User\+Async}} (int user\+Id)
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_expense_response_dto}{Expense\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a0f2f38ab6e6e9e8d82dc48f1a6026bca}{Create\+Async}} (int user\+Id, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_create_expense_dto}{Create\+Expense\+Dto}} dto)
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_expense_response_dto}{Expense\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_ab031b7f2ef4ab6ccdc65c6d3ab864c1b}{Update\+Async}} (int user\+Id, int id, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_update_expense_dto}{Update\+Expense\+Dto}} dto)
+\item 
+Task \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a3902e55fbadd7d1ee4c4b68f417fdc61}{Delete\+Async}} (int id)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a0f2f38ab6e6e9e8d82dc48f1a6026bca}\index{Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}!CreateAsync@{CreateAsync}}
+\index{CreateAsync@{CreateAsync}!Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}}
+\doxysubsubsection{\texorpdfstring{CreateAsync()}{CreateAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a0f2f38ab6e6e9e8d82dc48f1a6026bca} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_expense_response_dto}{Expense\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service.\+Create\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_create_expense_dto}{Create\+Expense\+Dto}}}]{dto}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_expense_1_1_expense_service_abb348e6e0d348c12a9e99416b72e2f59}{Finament.\+Application.\+Services.\+Expense.\+Expense\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a3902e55fbadd7d1ee4c4b68f417fdc61}\index{Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a3902e55fbadd7d1ee4c4b68f417fdc61} 
+Task Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_expense_1_1_expense_service_a76d124361d14f949f4aad2e7aa2150a3}{Finament.\+Application.\+Services.\+Expense.\+Expense\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a93c8bd91604e26497f862836a921dbad}\index{Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}!GetByUserAsync@{GetByUserAsync}}
+\index{GetByUserAsync@{GetByUserAsync}!Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}}
+\doxysubsubsection{\texorpdfstring{GetByUserAsync()}{GetByUserAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_a93c8bd91604e26497f862836a921dbad} 
+Task$<$ IRead\+Only\+List$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_expense_response_dto}{Expense\+Response\+Dto}} $>$ $>$ Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service.\+Get\+By\+User\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_expense_1_1_expense_service_a5a87cf4982b6dde702dd4f4adfdc9bc1}{Finament.\+Application.\+Services.\+Expense.\+Expense\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_ab031b7f2ef4ab6ccdc65c6d3ab864c1b}\index{Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!Finament.Application.Services.Expense.IExpenseService@{Finament.Application.Services.Expense.IExpenseService}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service_ab031b7f2ef4ab6ccdc65c6d3ab864c1b} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_expense_response_dto}{Expense\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+Expense.\+IExpense\+Service.\+Update\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{id}{, }\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_update_expense_dto}{Update\+Expense\+Dto}}}]{dto}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_expense_1_1_expense_service_a20c3bf26c586000c9957c1ee01c17b8f}{Finament.\+Application.\+Services.\+Expense.\+Expense\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Finament.\+Application/\+\+Services/\+\+Expense/\+\doxymbox{\hyperlink{_i_expense_service_8cs}{IExpense\+Service.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\doxysection{Finament.\+Application.\+Services.\+User.\+IUser\+Service Interface Reference}
+\hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service}{}\label{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service}\index{Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}}
+
+
+Inheritance diagram for Finament.\+Application.\+Services.\+User.\+IUser\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Finament.\+Application.\+Services.\+User.\+IUser\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ IRead\+Only\+List$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_ab9358fb5441dc125307e2cbf0e56ecc2}{Get\+All\+Async}} ()
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_aa500593f39033f920de7eadc2ed749cf}{Get\+By\+Id\+Async}} (int id)
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_a684d2cf0ab80e388a7d750e69da30eba}{Create\+Async}} (\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_requests_1_1_create_user_dto}{Create\+User\+Dto}} dto)
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_a8ff4e2793a428de214a7bb1e460bae02}{Update\+Async}} (int id, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_requests_1_1_update_user_dto}{Update\+User\+Dto}} dto)
+\item 
+Task \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_adb13cae1240679d4a6b3773eae62447a}{Delete\+Async}} (int id)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_a684d2cf0ab80e388a7d750e69da30eba}\index{Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}!CreateAsync@{CreateAsync}}
+\index{CreateAsync@{CreateAsync}!Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}}
+\doxysubsubsection{\texorpdfstring{CreateAsync()}{CreateAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_a684d2cf0ab80e388a7d750e69da30eba} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+User.\+IUser\+Service.\+Create\+Async (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_requests_1_1_create_user_dto}{Create\+User\+Dto}}}]{dto}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_user_1_1_user_service_a9573848f729c6848124d377ef957caf1}{Finament.\+Application.\+Services.\+User.\+User\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_adb13cae1240679d4a6b3773eae62447a}\index{Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_adb13cae1240679d4a6b3773eae62447a} 
+Task Finament.\+Application.\+Services.\+User.\+IUser\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_user_1_1_user_service_a42df1137d336e167dfcb17a72637a9f1}{Finament.\+Application.\+Services.\+User.\+User\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_ab9358fb5441dc125307e2cbf0e56ecc2}\index{Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_ab9358fb5441dc125307e2cbf0e56ecc2} 
+Task$<$ IRead\+Only\+List$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ $>$ Finament.\+Application.\+Services.\+User.\+IUser\+Service.\+Get\+All\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_user_1_1_user_service_aaaa1708dea70a8b51169bbdf60463187}{Finament.\+Application.\+Services.\+User.\+User\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_aa500593f39033f920de7eadc2ed749cf}\index{Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}!GetByIdAsync@{GetByIdAsync}}
+\index{GetByIdAsync@{GetByIdAsync}!Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync()}{GetByIdAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_aa500593f39033f920de7eadc2ed749cf} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+User.\+IUser\+Service.\+Get\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_user_1_1_user_service_a414752718df95c599cda5cb7c5995ce4}{Finament.\+Application.\+Services.\+User.\+User\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_a8ff4e2793a428de214a7bb1e460bae02}\index{Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!Finament.Application.Services.User.IUserService@{Finament.Application.Services.User.IUserService}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service_a8ff4e2793a428de214a7bb1e460bae02} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_user_response_dto}{User\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+User.\+IUser\+Service.\+Update\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_users_1_1_requests_1_1_update_user_dto}{Update\+User\+Dto}}}]{dto}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_user_1_1_user_service_a498455e44603a2e4a8dbfb80876313d7}{Finament.\+Application.\+Services.\+User.\+User\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Finament.\+Application/\+\+Services/\+\+User/\+\doxymbox{\hyperlink{_i_user_service_8cs}{IUser\+Service.\+cs}}\end{DoxyCompactItemize}

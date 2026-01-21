@@ -134,15 +134,12 @@ public sealed class CategoryService : ICategoryService
         );
 
         if (rounded < 1)
-            throw new ValidationException(
-                "Monthly estimate must be at least 1."
-            );
+            throw new ValidationException("Monthly estimate must be at least 1.");
 
         dto.MonthlyLimit = rounded;
 
         // COLOR
-        if (string.IsNullOrWhiteSpace(dto.Color) ||
-            !HexColorRegex.IsMatch(dto.Color))
+        if (string.IsNullOrWhiteSpace(dto.Color) || !HexColorRegex.IsMatch(dto.Color))
         {
             dto.Color = "#FFFFFF";
         }

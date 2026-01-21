@@ -1,0 +1,4 @@
+var _upsert_setting_dto_8cs =
+[
+    [ "Finament.Application.DTOs.Settings.Requests.UpsertSettingDto", "class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_requests_1_1_upsert_setting_dto.html", "class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_requests_1_1_upsert_setting_dto" ]
+];

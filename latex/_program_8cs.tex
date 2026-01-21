@@ -1,0 +1,296 @@
+\doxysection{Finament.\+Api/\+\+Program.cs File Reference}
+\hypertarget{_program_8cs}{}\label{_program_8cs}\index{Finament.Api/Program.cs@{Finament.Api/Program.cs}}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{_program_8cs_ab8397cae95c89a6fb0b1ee0d7beafe81}{scope}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_abc3694a0e15618f2499e5a540264f833}{Add\+Controllers}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a0d7859f9cad50e8e9fdf015100780e07}{Add\+Endpoints\+Api\+Explorer}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_acee807b7547d4676a9de1b80b5900de7}{Add\+Swagger\+Gen}} (options=$>$ \{ options.\+Swagger\+Doc("{}v1"{}, new Open\+Api\+Info \{ Title="{}Finament.\+Api"{}, Version="{}v1"{}, Description="{}The \doxymbox{\hyperlink{namespace_finament}{Finament}} API"{} \});\})
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a69f15691884de62766cbf57c0897018b}{Add\+Db\+Context$<$ Finament\+Db\+Context $>$}} (options=$>$ \{ options.\+Use\+Npgsql(\doxymbox{\hyperlink{_program_8cs_a067cdd5f0fed6b2598fae7de8607e7da}{connection\+String}});\})
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a5872b06813f165b7fd35429f91f10165}{Add\+Cors}} (options=$>$ \{ options.\+Add\+Policy(name:\+frontendcors, policy=$>$ \{ policy.\+Allow\+Any\+Origin() .Allow\+Any\+Header() .Allow\+Any\+Method();\});\})
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a269030afdbfc2a1131c6a3fecf839c05}{Add\+Scoped$<$ IFinament\+Db\+Context, Finament\+Db\+Context $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_af2f9b5ecae3c76647620ab91de784c2c}{Add\+Scoped$<$ ICategory\+Service, Category\+Service $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a50d95910857c4441e14e18e4c54d0d3f}{Add\+Scoped$<$ IExpense\+Service, Expense\+Service $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a8df924a3a698e5b5445021b1abc48982}{Add\+Scoped$<$ ISetting\+Service, Setting\+Service $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_afe1a29a5ec8f2a434f1f355de71764d5}{Add\+Scoped$<$ IUser\+Service, User\+Service $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a8e644987da7632c623b4dfd8900fa1bc}{Add\+Scoped$<$ IAuth\+Service, Auth\+Service $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_ac50cecf3bb9f43355be5d98fbaebd0d9}{Add\+Scoped$<$ IUser\+Context, User\+Context $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a6866196205f918f00031e6f9e8174e04}{Add\+Scoped$<$ IToken\+Service, Token\+Service $>$}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a0b32c6cf4450325c6be2ec3464691e1d}{Configure$<$ Jwt\+Options $>$}} (builder.\+Configuration.\+Get\+Section("{}Jwt"{}))
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a0651b1cc6b2ec2a500b3fbaaaba6ac6c}{Add\+Http\+Context\+Accessor}} ()
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_a7b2bc4c41ab1f801b53d7330af1fdf7e}{Add\+Authentication}} (Jwt\+Bearer\+Defaults.\+Authentication\+Scheme) .Add\+Jwt\+Bearer(options
+\item 
+builder.\+Services. \doxymbox{\hyperlink{_program_8cs_ae5ec6d7548eaed13afc397f42272d5a8}{Add\+Authorization}} ()
+\item 
+app. \doxymbox{\hyperlink{_program_8cs_ad3d25a48d91262989420c6e1ff920f0a}{Use\+Cors}} (\doxymbox{\hyperlink{_program_8cs_ae99ffe66cbdcec66c01369c75228b742}{frontendcors}})
+\item 
+app. \doxymbox{\hyperlink{_program_8cs_a6435d8beeff4999dc0b0c6d60a86a4e2}{Use\+Authentication}} ()
+\item 
+app. \doxymbox{\hyperlink{_program_8cs_af6f72d752b2e73aa0292f74bd13237ab}{Use\+Authorization}} ()
+\item 
+App\+Context. \doxymbox{\hyperlink{_program_8cs_a9caf9ce81d5f59c21188198b0a1a2328}{Set\+Switch}} ("{}Npgsql.\+Disable\+Date\+Time\+Infinity\+Conversions"{}, true)
+\item 
+App\+Context. \doxymbox{\hyperlink{_program_8cs_a959ac7f327e119e919e9d3d66fb2aa99}{Set\+Switch}} ("{}Npgsql.\+Enable\+Legacy\+Timestamp\+Behavior"{}, true)
+\item 
+\doxymbox{\hyperlink{_program_8cs_a79a944c7f0e25196ca3c5a8638b919b9}{if}} (app.\+Environment.\+Is\+Development())
+\item 
+app. \doxymbox{\hyperlink{_program_8cs_a1c1a92b2313108c809deda3f4a293e17}{Use\+Middleware$<$ Exception\+Handling\+Middleware $>$}} ()
+\item 
+app. \doxymbox{\hyperlink{_program_8cs_a9e2ee3170aa6279b68eefd1651f7d96c}{Map\+Controllers}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \doxymbox{\hyperlink{_program_8cs_a2f78352277081c620fd4cf92a5ce15e5}{builder}} = Web\+Application.\+Create\+Builder(args)
+\item 
+var \doxymbox{\hyperlink{_program_8cs_a067cdd5f0fed6b2598fae7de8607e7da}{connection\+String}} = builder.\+Configuration.\+Get\+Connection\+String("{}Database"{})
+\item 
+var \doxymbox{\hyperlink{_program_8cs_ae99ffe66cbdcec66c01369c75228b742}{frontendcors}} = "{}\+\_\+frontend\+Cors"{}
+\item 
+var \doxymbox{\hyperlink{_program_8cs_a91962682500569d692e984e14d3723e8}{jwt}} = builder.\+Configuration.\+Get\+Section("{}Jwt"{}).Get$<$\doxymbox{\hyperlink{class_finament_1_1_application_1_1_security_1_1_jwt_options}{Jwt\+Options}}$>$()!
+\item 
+var \doxymbox{\hyperlink{_program_8cs_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}} = builder.\+Build()
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{_program_8cs_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_program_8cs_ab8397cae95c89a6fb0b1ee0d7beafe81}\index{Program.cs@{Program.cs}!scope@{scope}}
+\index{scope@{scope}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{scope}{scope}}
+{\footnotesize\ttfamily \label{_program_8cs_ab8397cae95c89a6fb0b1ee0d7beafe81} 
+using \doxymbox{\hyperlink{_program_8cs_ab8397cae95c89a6fb0b1ee0d7beafe81}{scope}}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \doxymbox{\hyperlink{_program_8cs_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.Services.CreateScope())}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ var\ db\ =\ \doxymbox{\hyperlink{_program_8cs_ab8397cae95c89a6fb0b1ee0d7beafe81}{scope}}.ServiceProvider.GetRequiredService<\doxymbox{\hyperlink{class_finament_1_1_infrastructure_1_1_persistence_1_1_finament_db_context}{FinamentDbContext}}>();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ db.Database.OpenConnection();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}✅\ Conectado\ correctamente\ a\ Supabase"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ db.Database.CloseConnection();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ ex)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}❌\ Error\ de\ conexión\ a\ la\ DB"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Console.WriteLine(ex.Message);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\doxymbox{\hyperlink{_program_8cs_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.Run()}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{_program_8cs_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_program_8cs_a7b2bc4c41ab1f801b53d7330af1fdf7e}\index{Program.cs@{Program.cs}!AddAuthentication@{AddAuthentication}}
+\index{AddAuthentication@{AddAuthentication}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddAuthentication()}{AddAuthentication()}}
+{\footnotesize\ttfamily \label{_program_8cs_a7b2bc4c41ab1f801b53d7330af1fdf7e} 
+builder.\+Services. Add\+Authentication (\begin{DoxyParamCaption}\item[{Jwt\+Bearer\+Defaults.\+Authentication\+Scheme}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_program_8cs_ae5ec6d7548eaed13afc397f42272d5a8}\index{Program.cs@{Program.cs}!AddAuthorization@{AddAuthorization}}
+\index{AddAuthorization@{AddAuthorization}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddAuthorization()}{AddAuthorization()}}
+{\footnotesize\ttfamily \label{_program_8cs_ae5ec6d7548eaed13afc397f42272d5a8} 
+builder.\+Services. Add\+Authorization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_abc3694a0e15618f2499e5a540264f833}\index{Program.cs@{Program.cs}!AddControllers@{AddControllers}}
+\index{AddControllers@{AddControllers}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddControllers()}{AddControllers()}}
+{\footnotesize\ttfamily \label{_program_8cs_abc3694a0e15618f2499e5a540264f833} 
+builder.\+Services. Add\+Controllers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a5872b06813f165b7fd35429f91f10165}\index{Program.cs@{Program.cs}!AddCors@{AddCors}}
+\index{AddCors@{AddCors}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddCors()}{AddCors()}}
+{\footnotesize\ttfamily \label{_program_8cs_a5872b06813f165b7fd35429f91f10165} 
+builder.\+Services. Add\+Cors (\begin{DoxyParamCaption}\item[{options}]{}{, }\item[{\{ options.\+Add\+Policy(name:\+frontendcors, policy=$>$ \{ policy.\+Allow\+Any\+Origin() .Allow\+Any\+Header() .Allow\+Any\+Method();\});\}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a69f15691884de62766cbf57c0897018b}\index{Program.cs@{Program.cs}!AddDbContext$<$ FinamentDbContext $>$@{AddDbContext$<$ FinamentDbContext $>$}}
+\index{AddDbContext$<$ FinamentDbContext $>$@{AddDbContext$<$ FinamentDbContext $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddDbContext$<$ FinamentDbContext $>$()}{AddDbContext< FinamentDbContext >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a69f15691884de62766cbf57c0897018b} 
+builder.\+Services. Add\+Db\+Context$<$ \doxymbox{\hyperlink{class_finament_1_1_infrastructure_1_1_persistence_1_1_finament_db_context}{Finament\+Db\+Context}} $>$ (\begin{DoxyParamCaption}\item[{options}]{}{, }\item[{\{ options.\+Use\+Npgsql(\doxymbox{\hyperlink{_program_8cs_a067cdd5f0fed6b2598fae7de8607e7da}{connection\+String}});\}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a0d7859f9cad50e8e9fdf015100780e07}\index{Program.cs@{Program.cs}!AddEndpointsApiExplorer@{AddEndpointsApiExplorer}}
+\index{AddEndpointsApiExplorer@{AddEndpointsApiExplorer}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddEndpointsApiExplorer()}{AddEndpointsApiExplorer()}}
+{\footnotesize\ttfamily \label{_program_8cs_a0d7859f9cad50e8e9fdf015100780e07} 
+builder.\+Services. Add\+Endpoints\+Api\+Explorer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a0651b1cc6b2ec2a500b3fbaaaba6ac6c}\index{Program.cs@{Program.cs}!AddHttpContextAccessor@{AddHttpContextAccessor}}
+\index{AddHttpContextAccessor@{AddHttpContextAccessor}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddHttpContextAccessor()}{AddHttpContextAccessor()}}
+{\footnotesize\ttfamily \label{_program_8cs_a0651b1cc6b2ec2a500b3fbaaaba6ac6c} 
+builder.\+Services. Add\+Http\+Context\+Accessor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a8e644987da7632c623b4dfd8900fa1bc}\index{Program.cs@{Program.cs}!AddScoped$<$ IAuthService, AuthService $>$@{AddScoped$<$ IAuthService, AuthService $>$}}
+\index{AddScoped$<$ IAuthService, AuthService $>$@{AddScoped$<$ IAuthService, AuthService $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ IAuthService, AuthService $>$()}{AddScoped< IAuthService, AuthService >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a8e644987da7632c623b4dfd8900fa1bc} 
+\doxymbox{\hyperlink{_program_8cs_a2f78352277081c620fd4cf92a5ce15e5}{builder}} Services Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_auth_1_1_i_auth_service}{IAuth\+Service}}, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_auth_1_1_auth_service}{Auth\+Service}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_af2f9b5ecae3c76647620ab91de784c2c}\index{Program.cs@{Program.cs}!AddScoped$<$ ICategoryService, CategoryService $>$@{AddScoped$<$ ICategoryService, CategoryService $>$}}
+\index{AddScoped$<$ ICategoryService, CategoryService $>$@{AddScoped$<$ ICategoryService, CategoryService $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ ICategoryService, CategoryService $>$()}{AddScoped< ICategoryService, CategoryService >()}}
+{\footnotesize\ttfamily \label{_program_8cs_af2f9b5ecae3c76647620ab91de784c2c} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service}{ICategory\+Service}}, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_category_1_1_category_service}{Category\+Service}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a50d95910857c4441e14e18e4c54d0d3f}\index{Program.cs@{Program.cs}!AddScoped$<$ IExpenseService, ExpenseService $>$@{AddScoped$<$ IExpenseService, ExpenseService $>$}}
+\index{AddScoped$<$ IExpenseService, ExpenseService $>$@{AddScoped$<$ IExpenseService, ExpenseService $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ IExpenseService, ExpenseService $>$()}{AddScoped< IExpenseService, ExpenseService >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a50d95910857c4441e14e18e4c54d0d3f} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_expense_1_1_i_expense_service}{IExpense\+Service}}, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_expense_1_1_expense_service}{Expense\+Service}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a269030afdbfc2a1131c6a3fecf839c05}\index{Program.cs@{Program.cs}!AddScoped$<$ IFinamentDbContext, FinamentDbContext $>$@{AddScoped$<$ IFinamentDbContext, FinamentDbContext $>$}}
+\index{AddScoped$<$ IFinamentDbContext, FinamentDbContext $>$@{AddScoped$<$ IFinamentDbContext, FinamentDbContext $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ IFinamentDbContext, FinamentDbContext $>$()}{AddScoped< IFinamentDbContext, FinamentDbContext >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a269030afdbfc2a1131c6a3fecf839c05} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_infrastructure_1_1_i_finament_db_context}{IFinament\+Db\+Context}}, \doxymbox{\hyperlink{class_finament_1_1_infrastructure_1_1_persistence_1_1_finament_db_context}{Finament\+Db\+Context}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a8df924a3a698e5b5445021b1abc48982}\index{Program.cs@{Program.cs}!AddScoped$<$ ISettingService, SettingService $>$@{AddScoped$<$ ISettingService, SettingService $>$}}
+\index{AddScoped$<$ ISettingService, SettingService $>$@{AddScoped$<$ ISettingService, SettingService $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ ISettingService, SettingService $>$()}{AddScoped< ISettingService, SettingService >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a8df924a3a698e5b5445021b1abc48982} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_setting_1_1_i_setting_service}{ISetting\+Service}}, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service}{Setting\+Service}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a6866196205f918f00031e6f9e8174e04}\index{Program.cs@{Program.cs}!AddScoped$<$ ITokenService, TokenService $>$@{AddScoped$<$ ITokenService, TokenService $>$}}
+\index{AddScoped$<$ ITokenService, TokenService $>$@{AddScoped$<$ ITokenService, TokenService $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ ITokenService, TokenService $>$()}{AddScoped< ITokenService, TokenService >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a6866196205f918f00031e6f9e8174e04} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_auth_1_1_i_token_service}{IToken\+Service}}, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_auth_1_1_token_service}{Token\+Service}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_ac50cecf3bb9f43355be5d98fbaebd0d9}\index{Program.cs@{Program.cs}!AddScoped$<$ IUserContext, UserContext $>$@{AddScoped$<$ IUserContext, UserContext $>$}}
+\index{AddScoped$<$ IUserContext, UserContext $>$@{AddScoped$<$ IUserContext, UserContext $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ IUserContext, UserContext $>$()}{AddScoped< IUserContext, UserContext >()}}
+{\footnotesize\ttfamily \label{_program_8cs_ac50cecf3bb9f43355be5d98fbaebd0d9} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_interfaces_1_1_api_1_1_i_user_context}{IUser\+Context}}, \doxymbox{\hyperlink{class_finament_1_1_api_1_1_security_1_1_user_context}{User\+Context}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_afe1a29a5ec8f2a434f1f355de71764d5}\index{Program.cs@{Program.cs}!AddScoped$<$ IUserService, UserService $>$@{AddScoped$<$ IUserService, UserService $>$}}
+\index{AddScoped$<$ IUserService, UserService $>$@{AddScoped$<$ IUserService, UserService $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddScoped$<$ IUserService, UserService $>$()}{AddScoped< IUserService, UserService >()}}
+{\footnotesize\ttfamily \label{_program_8cs_afe1a29a5ec8f2a434f1f355de71764d5} 
+builder.\+Services. Add\+Scoped$<$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_user_1_1_i_user_service}{IUser\+Service}}, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_user_1_1_user_service}{User\+Service}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_acee807b7547d4676a9de1b80b5900de7}\index{Program.cs@{Program.cs}!AddSwaggerGen@{AddSwaggerGen}}
+\index{AddSwaggerGen@{AddSwaggerGen}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{AddSwaggerGen()}{AddSwaggerGen()}}
+{\footnotesize\ttfamily \label{_program_8cs_acee807b7547d4676a9de1b80b5900de7} 
+builder.\+Services. Add\+Swagger\+Gen (\begin{DoxyParamCaption}\item[{options}]{}{, }\item[{\{ options.\+Swagger\+Doc("{}v1"{}, new Open\+Api\+Info \{ Title="{}Finament.\+Api"{}, Version="{}v1"{}, Description="{}The \doxymbox{\hyperlink{namespace_finament}{Finament}} API"{} \});\}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a0b32c6cf4450325c6be2ec3464691e1d}\index{Program.cs@{Program.cs}!Configure$<$ JwtOptions $>$@{Configure$<$ JwtOptions $>$}}
+\index{Configure$<$ JwtOptions $>$@{Configure$<$ JwtOptions $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{Configure$<$ JwtOptions $>$()}{Configure< JwtOptions >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a0b32c6cf4450325c6be2ec3464691e1d} 
+builder.\+Services. Configure$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_security_1_1_jwt_options}{Jwt\+Options}} $>$ (\begin{DoxyParamCaption}\item[{builder.\+Configuration.}]{Get\+Section}{"{}\+Jwt"{}}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a79a944c7f0e25196ca3c5a8638b919b9}\index{Program.cs@{Program.cs}!if@{if}}
+\index{if@{if}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily \label{_program_8cs_a79a944c7f0e25196ca3c5a8638b919b9} 
+if (\begin{DoxyParamCaption}\item[{app.\+Environment.\+Is\+Development()}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a9e2ee3170aa6279b68eefd1651f7d96c}\index{Program.cs@{Program.cs}!MapControllers@{MapControllers}}
+\index{MapControllers@{MapControllers}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{MapControllers()}{MapControllers()}}
+{\footnotesize\ttfamily \label{_program_8cs_a9e2ee3170aa6279b68eefd1651f7d96c} 
+app. Map\+Controllers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a9caf9ce81d5f59c21188198b0a1a2328}\index{Program.cs@{Program.cs}!SetSwitch@{SetSwitch}}
+\index{SetSwitch@{SetSwitch}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{SetSwitch()}{SetSwitch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{_program_8cs_a9caf9ce81d5f59c21188198b0a1a2328} 
+App\+Context. Set\+Switch (\begin{DoxyParamCaption}\item[{"{}Npgsql.\+Disable\+Date\+Time\+Infinity\+Conversions"{}}]{}{, }\item[{true}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a959ac7f327e119e919e9d3d66fb2aa99}\index{Program.cs@{Program.cs}!SetSwitch@{SetSwitch}}
+\index{SetSwitch@{SetSwitch}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{SetSwitch()}{SetSwitch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{_program_8cs_a959ac7f327e119e919e9d3d66fb2aa99} 
+App\+Context. Set\+Switch (\begin{DoxyParamCaption}\item[{"{}Npgsql.\+Enable\+Legacy\+Timestamp\+Behavior"{}}]{}{, }\item[{true}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a6435d8beeff4999dc0b0c6d60a86a4e2}\index{Program.cs@{Program.cs}!UseAuthentication@{UseAuthentication}}
+\index{UseAuthentication@{UseAuthentication}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{UseAuthentication()}{UseAuthentication()}}
+{\footnotesize\ttfamily \label{_program_8cs_a6435d8beeff4999dc0b0c6d60a86a4e2} 
+app. Use\+Authentication (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_af6f72d752b2e73aa0292f74bd13237ab}\index{Program.cs@{Program.cs}!UseAuthorization@{UseAuthorization}}
+\index{UseAuthorization@{UseAuthorization}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{UseAuthorization()}{UseAuthorization()}}
+{\footnotesize\ttfamily \label{_program_8cs_af6f72d752b2e73aa0292f74bd13237ab} 
+app. Use\+Authorization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_ad3d25a48d91262989420c6e1ff920f0a}\index{Program.cs@{Program.cs}!UseCors@{UseCors}}
+\index{UseCors@{UseCors}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{UseCors()}{UseCors()}}
+{\footnotesize\ttfamily \label{_program_8cs_ad3d25a48d91262989420c6e1ff920f0a} 
+app. Use\+Cors (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{_program_8cs_ae99ffe66cbdcec66c01369c75228b742}{frontendcors}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_program_8cs_a1c1a92b2313108c809deda3f4a293e17}\index{Program.cs@{Program.cs}!UseMiddleware$<$ ExceptionHandlingMiddleware $>$@{UseMiddleware$<$ ExceptionHandlingMiddleware $>$}}
+\index{UseMiddleware$<$ ExceptionHandlingMiddleware $>$@{UseMiddleware$<$ ExceptionHandlingMiddleware $>$}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{UseMiddleware$<$ ExceptionHandlingMiddleware $>$()}{UseMiddleware< ExceptionHandlingMiddleware >()}}
+{\footnotesize\ttfamily \label{_program_8cs_a1c1a92b2313108c809deda3f4a293e17} 
+app. Use\+Middleware$<$ \doxymbox{\hyperlink{class_finament_1_1_api_1_1_middleware_1_1_exception_handling_middleware}{Exception\+Handling\+Middleware}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{_program_8cs_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{_program_8cs_a7b225fcb720e4d5ed2bbf60e28a25e6d}\index{Program.cs@{Program.cs}!app@{app}}
+\index{app@{app}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily \label{_program_8cs_a7b225fcb720e4d5ed2bbf60e28a25e6d} 
+var app = builder.\+Build()}
+
+\Hypertarget{_program_8cs_a2f78352277081c620fd4cf92a5ce15e5}\index{Program.cs@{Program.cs}!builder@{builder}}
+\index{builder@{builder}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{builder}{builder}}
+{\footnotesize\ttfamily \label{_program_8cs_a2f78352277081c620fd4cf92a5ce15e5} 
+var builder = Web\+Application.\+Create\+Builder(args)}
+
+\Hypertarget{_program_8cs_a067cdd5f0fed6b2598fae7de8607e7da}\index{Program.cs@{Program.cs}!connectionString@{connectionString}}
+\index{connectionString@{connectionString}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{connectionString}{connectionString}}
+{\footnotesize\ttfamily \label{_program_8cs_a067cdd5f0fed6b2598fae7de8607e7da} 
+var connection\+String = builder.\+Configuration.\+Get\+Connection\+String("{}Database"{})}
+
+\Hypertarget{_program_8cs_ae99ffe66cbdcec66c01369c75228b742}\index{Program.cs@{Program.cs}!frontendcors@{frontendcors}}
+\index{frontendcors@{frontendcors}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{frontendcors}{frontendcors}}
+{\footnotesize\ttfamily \label{_program_8cs_ae99ffe66cbdcec66c01369c75228b742} 
+var frontendcors = "{}\+\_\+frontend\+Cors"{}}
+
+\Hypertarget{_program_8cs_a91962682500569d692e984e14d3723e8}\index{Program.cs@{Program.cs}!jwt@{jwt}}
+\index{jwt@{jwt}!Program.cs@{Program.cs}}
+\doxysubsubsection{\texorpdfstring{jwt}{jwt}}
+{\footnotesize\ttfamily \label{_program_8cs_a91962682500569d692e984e14d3723e8} 
+var jwt = builder.\+Configuration.\+Get\+Section("{}Jwt"{}).Get$<$\doxymbox{\hyperlink{class_finament_1_1_application_1_1_security_1_1_jwt_options}{Jwt\+Options}}$>$()!}
+

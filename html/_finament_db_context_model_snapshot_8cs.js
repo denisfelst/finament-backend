@@ -1,0 +1,4 @@
+var _finament_db_context_model_snapshot_8cs =
+[
+    [ "Finament.Infrastructure.Migrations.FinamentDbContextModelSnapshot", "class_finament_1_1_infrastructure_1_1_migrations_1_1_finament_db_context_model_snapshot.html", "class_finament_1_1_infrastructure_1_1_migrations_1_1_finament_db_context_model_snapshot" ]
+];

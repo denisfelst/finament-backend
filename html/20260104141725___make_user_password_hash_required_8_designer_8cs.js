@@ -1,0 +1,4 @@
+var 20260104141725___make_user_password_hash_required_8_designer_8cs =
+[
+    [ "Finament.Infrastructure.Migrations.MakeUserPasswordHashRequired", "class_finament_1_1_infrastructure_1_1_migrations_1_1_make_user_password_hash_required.html", "class_finament_1_1_infrastructure_1_1_migrations_1_1_make_user_password_hash_required" ]
+];

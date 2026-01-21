@@ -1,0 +1,6 @@
+var namespace_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests =
+[
+    [ "CreateCategoryDto", "class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_create_category_dto.html", "class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_create_category_dto" ],
+    [ "ICategoryWriteBaseDto", "interface_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_i_category_write_base_dto.html", "interface_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_i_category_write_base_dto" ],
+    [ "UpdateCategoryDto", "class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_update_category_dto.html", "class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_update_category_dto" ]
+];

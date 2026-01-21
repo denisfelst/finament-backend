@@ -1,0 +1,70 @@
+\doxysection{Finament.\+Application.\+Services.\+Setting.\+Setting\+Service Class Reference}
+\hypertarget{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service}{}\label{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service}\index{Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}}
+
+
+Inheritance diagram for Finament.\+Application.\+Services.\+Setting.\+Setting\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Finament.\+Application.\+Services.\+Setting.\+Setting\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_af828cd34384f7e435a3c95e3bef4d149}{Setting\+Service}} (\doxymbox{\hyperlink{interface_finament_1_1_application_1_1_infrastructure_1_1_i_finament_db_context}{IFinament\+Db\+Context}} db)
+\item 
+async Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_setting_response_dto}{Setting\+Response\+Dto}}?$>$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_a7d4fb14e50d455d389c320f9535b9e44}{Get\+By\+User\+Async}} (int user\+Id)
+\item 
+async Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_setting_response_dto}{Setting\+Response\+Dto}} $>$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_a1482457193be0f0264fafbafe594841e}{Upsert\+Async}} (int user\+Id, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_requests_1_1_upsert_setting_dto}{Upsert\+Setting\+Dto}} dto)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_af828cd34384f7e435a3c95e3bef4d149}\index{Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}!SettingService@{SettingService}}
+\index{SettingService@{SettingService}!Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}}
+\doxysubsubsection{\texorpdfstring{SettingService()}{SettingService()}}
+{\footnotesize\ttfamily \label{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_af828cd34384f7e435a3c95e3bef4d149} 
+Finament.\+Application.\+Services.\+Setting.\+Setting\+Service.\+Setting\+Service (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_finament_1_1_application_1_1_infrastructure_1_1_i_finament_db_context}{IFinament\+Db\+Context}}}]{db}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_a7d4fb14e50d455d389c320f9535b9e44}\index{Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}!GetByUserAsync@{GetByUserAsync}}
+\index{GetByUserAsync@{GetByUserAsync}!Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}}
+\doxysubsubsection{\texorpdfstring{GetByUserAsync()}{GetByUserAsync()}}
+{\footnotesize\ttfamily \label{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_a7d4fb14e50d455d389c320f9535b9e44} 
+async Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_setting_response_dto}{Setting\+Response\+Dto}}?$>$ Finament.\+Application.\+Services.\+Setting.\+Setting\+Service.\+Get\+By\+User\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_setting_1_1_i_setting_service_a5e9b155e9b495c44122ad2bf2537e308}{Finament.\+Application.\+Services.\+Setting.\+ISetting\+Service}}.
+
+\Hypertarget{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_a1482457193be0f0264fafbafe594841e}\index{Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}!UpsertAsync@{UpsertAsync}}
+\index{UpsertAsync@{UpsertAsync}!Finament.Application.Services.Setting.SettingService@{Finament.Application.Services.Setting.SettingService}}
+\doxysubsubsection{\texorpdfstring{UpsertAsync()}{UpsertAsync()}}
+{\footnotesize\ttfamily \label{class_finament_1_1_application_1_1_services_1_1_setting_1_1_setting_service_a1482457193be0f0264fafbafe594841e} 
+async Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_setting_response_dto}{Setting\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+Setting.\+Setting\+Service.\+Upsert\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_settings_1_1_requests_1_1_upsert_setting_dto}{Upsert\+Setting\+Dto}}}]{dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_setting_1_1_i_setting_service_a3859249db697d9ac2a8385aa975540e2}{Finament.\+Application.\+Services.\+Setting.\+ISetting\+Service}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Finament.\+Application/\+\+Services/\+\+Setting/\+\doxymbox{\hyperlink{_setting_service_8cs}{Setting\+Service.\+cs}}\end{DoxyCompactItemize}

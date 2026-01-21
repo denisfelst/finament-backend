@@ -1,0 +1,4 @@
+var _i_category_write_base_dto_8cs =
+[
+    [ "Finament.Application.DTOs.Categories.Requests.ICategoryWriteBaseDto", "interface_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_i_category_write_base_dto.html", "interface_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_i_category_write_base_dto" ]
+];

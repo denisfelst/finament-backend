@@ -1,0 +1,81 @@
+\doxysection{Finament.\+Application.\+Services.\+Category.\+ICategory\+Service Interface Reference}
+\hypertarget{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service}{}\label{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service}\index{Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}}
+
+
+Inheritance diagram for Finament.\+Application.\+Services.\+Category.\+ICategory\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Finament.\+Application.\+Services.\+Category.\+ICategory\+Service:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ IRead\+Only\+List$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_category_response_dto}{Category\+Response\+Dto}} $>$ $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a97e561f5b87c157fdabff9de25632755}{Get\+By\+User\+Async}} (int user\+Id)
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_category_response_dto}{Category\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a600bc0351fb73bdb8f9e514f8d6a0447}{Create\+Async}} (int user\+Id, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_create_category_dto}{Create\+Category\+Dto}} dto)
+\item 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_category_response_dto}{Category\+Response\+Dto}} $>$ \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_aa4be2a116da70fb3c62362789255e2ac}{Update\+Async}} (int user\+Id, int id, \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_update_category_dto}{Update\+Category\+Dto}} dto)
+\item 
+Task \doxymbox{\hyperlink{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a04f44e9fc0d7200773585cb6aa504594}{Delete\+Async}} (int id)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a600bc0351fb73bdb8f9e514f8d6a0447}\index{Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}!CreateAsync@{CreateAsync}}
+\index{CreateAsync@{CreateAsync}!Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}}
+\doxysubsubsection{\texorpdfstring{CreateAsync()}{CreateAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a600bc0351fb73bdb8f9e514f8d6a0447} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_category_response_dto}{Category\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+Category.\+ICategory\+Service.\+Create\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_create_category_dto}{Create\+Category\+Dto}}}]{dto}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_category_1_1_category_service_a04032c12dc51401171583c3bbfacaa16}{Finament.\+Application.\+Services.\+Category.\+Category\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a04f44e9fc0d7200773585cb6aa504594}\index{Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a04f44e9fc0d7200773585cb6aa504594} 
+Task Finament.\+Application.\+Services.\+Category.\+ICategory\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_category_1_1_category_service_abf319ecbe32914cac47a7323fe8bd3eb}{Finament.\+Application.\+Services.\+Category.\+Category\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a97e561f5b87c157fdabff9de25632755}\index{Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}!GetByUserAsync@{GetByUserAsync}}
+\index{GetByUserAsync@{GetByUserAsync}!Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}}
+\doxysubsubsection{\texorpdfstring{GetByUserAsync()}{GetByUserAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_a97e561f5b87c157fdabff9de25632755} 
+Task$<$ IRead\+Only\+List$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_category_response_dto}{Category\+Response\+Dto}} $>$ $>$ Finament.\+Application.\+Services.\+Category.\+ICategory\+Service.\+Get\+By\+User\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_category_1_1_category_service_ab9b4fdaf7da38dbdcdd34959df57486b}{Finament.\+Application.\+Services.\+Category.\+Category\+Service}}.
+
+\Hypertarget{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_aa4be2a116da70fb3c62362789255e2ac}\index{Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!Finament.Application.Services.Category.ICategoryService@{Finament.Application.Services.Category.ICategoryService}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{interface_finament_1_1_application_1_1_services_1_1_category_1_1_i_category_service_aa4be2a116da70fb3c62362789255e2ac} 
+Task$<$ \doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_category_response_dto}{Category\+Response\+Dto}} $>$ Finament.\+Application.\+Services.\+Category.\+ICategory\+Service.\+Update\+Async (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{id}{, }\item[{\doxymbox{\hyperlink{class_finament_1_1_application_1_1_d_t_os_1_1_categories_1_1_requests_1_1_update_category_dto}{Update\+Category\+Dto}}}]{dto}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_finament_1_1_application_1_1_services_1_1_category_1_1_category_service_a5f180352aa40254dfb013e28273e8131}{Finament.\+Application.\+Services.\+Category.\+Category\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Finament.\+Application/\+\+Services/\+\+Category/\+\doxymbox{\hyperlink{_i_category_service_8cs}{ICategory\+Service.\+cs}}\end{DoxyCompactItemize}

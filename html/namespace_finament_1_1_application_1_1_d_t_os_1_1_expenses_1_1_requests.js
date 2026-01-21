@@ -1,0 +1,6 @@
+var namespace_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests =
+[
+    [ "CreateExpenseDto", "class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_create_expense_dto.html", "class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_create_expense_dto" ],
+    [ "IExpenseWriteBaseDto", "interface_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_i_expense_write_base_dto.html", "interface_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_i_expense_write_base_dto" ],
+    [ "UpdateExpenseDto", "class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_update_expense_dto.html", "class_finament_1_1_application_1_1_d_t_os_1_1_expenses_1_1_requests_1_1_update_expense_dto" ]
+];
